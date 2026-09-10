@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: xperience-event-assistant
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_DB
+        value: xperience_resume
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.1-flash-lite
+# APP_ORIGIN defaults to Render's RENDER_EXTERNAL_URL. Set it explicitly
+# only when using a custom domain. Express stays on loopback port 4000.

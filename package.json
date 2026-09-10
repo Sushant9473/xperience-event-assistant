@@ -1,0 +1,29 @@
+{
+  "name": "xperience-assistant",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "format": "prettier --write .",
+    "start": "node scripts/start.mjs",
+    "dev": "npm run build -w @event/shared && node scripts/dev.mjs",
+    "build": "npm run build -w @event/shared && npm run build -w @event/api && npm run build -w @event/web",
+    "typecheck": "npm run build -w @event/shared && npm run typecheck -w @event/api && npm run typecheck -w @event/web",
+    "test": "npm run build -w @event/shared && npm run test -w @event/api",
+    "test:deployment": "node --test scripts/production-processes.test.mjs && npm run test -w @event/api -- test/config.test.ts",
+    "db": "node scripts/database.mjs",
+    "seed": "npm run build -w @event/shared && npm run seed -w @event/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

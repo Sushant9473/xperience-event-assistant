@@ -1,0 +1,8 @@
+node_modules
+.next
+dist
+package-lock.json
+.data
+.env
+**/AGENTS.md
+**/CLAUDE.md
