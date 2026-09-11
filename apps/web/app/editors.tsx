@@ -174,7 +174,7 @@ export function CreateEvent({
           <EventFields info={info} />
           <label className="span-2">
             Assistant mode
-            <select name="mode" defaultValue="demo">
+            <select name="mode" defaultValue={liveAvailable ? "live" : "demo"}>
               <option value="demo">Demo — scripted assessment scenarios</option>
               <option value="live" disabled={!liveAvailable}>
                 Live Gemini{!liveAvailable ? " — API key required" : ""}
