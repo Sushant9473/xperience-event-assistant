@@ -1,5 +1,11 @@
 # Local validation results
 
+## Deployment follow-up — September 11, 2026
+
+The user completed the Render/Atlas deployment. An independent HTTP request to `https://xperience-event-assistant.onrender.com/api/health` returned HTTP 200 and `{"status":"ok"}` on September 11. No full suite, production build, or browser QA was repeated for the submission documentation changes. The results and limitations below describe the earlier local validation, not a new hosted end-to-end test. The walkthrough video is still unrecorded.
+
+## Earlier local checks
+
 Verified on September 9, 2026, using Node.js 26.0.0, npm 11.12.1, MongoDB 8.2.7, Next.js 16.3.4, and Vitest 4.1.11.
 
 | Check | Result |
